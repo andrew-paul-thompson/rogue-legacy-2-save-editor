@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="test.css" />
+    <title>Rogue Legacy 2 Save Editor</title>
+  </head>
+  <body class="d-flex flex-column vh-100">
+    <navbar class="navbar d-flex flex-column">Rogue Legacy 2 Save Editor</navbar>
+    <main class="container">
+      <div class="alert alert-warning">
+        <p>Drag and drop your Player.rc2dat file from your save folder.</p>
+        <p>For the Steam version, the save folder should be located at:</p>
+        <p>%USERPROFILE%\AppData\LocalLow\Cellar Door Games\Rogue Legacy 2\Saves\Steam\&lt;user-id&gt;\*</p>
+      </div>
+      <div id="error-alert-container"></div>
+      <div class="form">
+        <form action="">
+          <fieldset id="fields" disabled>
+            <div class="form-group">
+              <img class="resource-icon" src="images/gold.png" />
+              <label for="gold" class="form-label">
+                <span class="resource-text">Gold</span>
+              </label>
+              <input
+                class="form-control"
+                placeholder="0"
+                min="0"
+                max="4294967295"
+                type="number"
+                name="gold"
+                id="gold"
+                oninput="setGold(event.target.value);"
+              />
+            </div>
+            <div class="form-group">
+              <img class="resource-icon" src="images/ore.png" />
+              <label for="ore" class="form-label">
+                <span class="resource-text">Ore</span>
+              </label>
+              <input
+                class="form-control"
+                placeholder="0"
+                min="0"
+                max="4294967295"
+                type="number"
+                name="ore"
+                id="ore"
+                oninput="setOre(event.target.value);"
+              />
+            </div>
+            <div class="form-group">
+              <img class="resource-icon" src="images/aether.png" />
+              <label for="aether" class="form-label">
+                <span class="resource-text">Aether</span>
+              </label>
+              <input
+                class="form-control"
+                placeholder="0"
+                min="0"
+                max="4294967295"
+                type="number"
+                name="aether"
+                id="aether"
+                oninput="setAether(event.target.value);"
+              />
+            </div>
+            <button type="button" class="btn btn-lg btn-primary" id="download-button" onclick="downloadSaveFile();">
+              <img src="images/download.svg" width="25" />
+              <span class="button-text">Download Save File</span>
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+    <footer class="d-flex justify-content-center p-4">
+      <div class="d-flex flex-column bg-light rounded text-muted p-4">
+        <div class="text-center">
+          <a href="https://github.com/andrew-paul-thompson/"><img src="images/github.svg" width="32" /></a>
+        </div>
+        <div class="mb-3 text-center">This page was created by Andrew Thompson.</div>
+        <div class="mb-3 text-center d-flex flex-column justify-content-center">
+          <script type="text/javascript" src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"></script>
+          <script type="text/javascript">
+            kofiwidget2.init("Buy Me a Coffee", "#5695ee", "P5P8CT7SB");
+            kofiwidget2.draw();
+          </script>
+        </div>
+        <div class="text-center">Rogue Legacy 2 is © <a href="https://cellardoorgames.com/">Cellar Door Games</a></div>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+    integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="rl2.js"></script>
+</html>

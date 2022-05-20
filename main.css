@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya&display=swap");
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: row;
+}
+
+.form-control {
+  margin-bottom: 0.5em;
+}
+
+body {
+  background-color: #dcdcd1;
+  color: #34242b;
+  font-family: "Alegreya", serif;
+  font-size: 1.5rem;
+}
+
+.resource-icon {
+  max-width: 10%;
+}
+
+.resource-text {
+  padding-left: 0.1em;
+}
+
+.button-text {
+  padding-left: 0.1em;
+}
